@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas
 
 st.set_page_config(layout="centered",page_title="Nestor's Portfolio")
 col1,col2 = st.columns(2,vertical_alignment="center")
@@ -20,3 +21,12 @@ Below you can find my python projects.
 """
 st.subheader(content2)
 st.write("Feel free to use wichever you want")
+
+col3,col4 = st.columns(2)
+df = pandas.read_csv("data.csv",sep=";")
+with col3:
+    for index,row in df[:10].iterrows():
+        st.header(row["title"])
+with col4:
+    for index,row in df[10:].iterrows():
+        st.header(row["title"])
