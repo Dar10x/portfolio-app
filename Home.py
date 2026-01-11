@@ -5,20 +5,26 @@ st.set_page_config(layout="wide",page_title="Nestor's Portfolio")
 col1,col2 = st.columns(2,vertical_alignment="top")
 
 with col1:
-    st.image("images/photo.png",width=200)
+    st.image("images/photo.jpeg",width=200)
 
 
 with col2:
-    st.title("Nestor Ari")
+    st.title("Nestor Dario Ari Machaca")
     content = """
-    Hi, I am Nestor! Right now I am studying at Pontificia Universidad Catolica del Peru. I've been working with python since 2025.
-    I also know how to code in C and C++. I have an advance level of english and can also work with data in SQL. 
-    Here are my projects I have been working on.
+    Hi, I am Nestor! 
+    I am a student at Pontificia Universidad Catolica del Peru with a strong 
+    focus on Data Science and Software Engineering. I have been developing in 
+    Python since 2025 alongside a solid foundation in C and C++ where I 
+    mastered complex data structures like trees and linked lists. 
+    My background includes building Machine Learning models for business 
+    strategy and designing robust database systems in Oracle SQL. 
+    I hold an advanced English level and I am passionate about turning 
+    raw data into actionable insights through NLP and predictive analytics.
     """
     st.write(content)
 
 content2 = """
-Below you can find my python projects. 
+Check out my featured projects below
 """
 st.subheader(content2)
 st.write("Feel free to use whichever you want")
