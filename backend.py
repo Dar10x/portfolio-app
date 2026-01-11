@@ -1,5 +1,6 @@
 import smtplib, ssl
 import streamlit as st
+import re
 
 
 def send_email(message):
@@ -12,3 +13,7 @@ def send_email(message):
     with smtplib.SMTP_SSL(host, port, context=my_context) as server:
         server.login(username, password)
         server.sendmail(username, receiver,message)
+
+def is_valid_email(email):
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return re.match(pattern, email)
