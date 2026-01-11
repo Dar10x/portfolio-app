@@ -1,5 +1,5 @@
 import streamlit as st
-from send_emails import send_email
+from backend import send_email, is_valid_email
 
 st.header("Contact Me")
 
@@ -11,7 +11,15 @@ Subject: I see your portfolio
 {raw_message}
 From {user_email}
 """
-    button = st.form_submit_button("Submit",)
+    button = st.form_submit_button("Submit")
+    
     if button:
-        send_email(message)
-        st.info("Your email was sent successfully")
+        if not user_email:
+            st.error("Please enter your email addres.")
+        elif not is_valid_email(user_email):
+            st.error("Please enter a valid email address (e.g., name@example.com).")
+        elif not raw_message.strip():
+            st.warning("Please write a message before sending.")
+        else:
+            send_email(message)
+            st.info("Your email was sent successfully")
