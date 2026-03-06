@@ -41,11 +41,11 @@ with col3:
     for index,row in df_left.iterrows():
         st.header(row["title"])
         st.write(row["description"])
-        st.image("images/" + f"{index+1}.png")
+        st.image("images/" + f"{index+1}.png", width=150)
         st.link_button(label='Link',url=row["url"])
 with col4:
     for index,row in df_right.iterrows():
         st.header(row["title"])
         st.write(row["description"])
-        st.image("images/" + f"{index+1}.png")
+        st.image("images/" + f"{index+1}.png", width=150)
         st.link_button(label='Link', url=row["url"])
